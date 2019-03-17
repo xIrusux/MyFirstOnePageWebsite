@@ -2,6 +2,8 @@ const track = document.querySelector(".carousel__track");
 const slides = Array.from(track.children);
 const nextButton = document.querySelector(".carousel__button--right");
 const prevButton = document.querySelector(".carousel__button--left");
+const pauseButton = document.querySelector(".carousel__button--pause");
+const playButton = document.querySelector(".carousel__button--play");
 const dotsNav = document.querySelector(".carousel__nav");
 let interval;
 const dots = Array.from(dotsNav.children);
@@ -44,6 +46,18 @@ const autoPlay = () => {
 };
 
 autoPlay();
+
+// pause autoplay & infinite loop when pause button is clicked
+
+pauseButton.addEventListener("click", e => {
+  clearTimeout(interval);
+});
+
+// restart autoplay & infinite loop when play button is clicked
+
+playButton.addEventListener("click", e => {
+  autoPlay();
+});
 
 // when left or right arrow key is clicked, move slides and dots
 
