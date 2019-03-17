@@ -28,6 +28,24 @@ const updateDots = (currentDot, targetDot) => {
     targetDot.classList.add('current-slide') ;
 }
 
+document.onkeydown =function(event){
+    if (event.keyCode === 37) {
+        const currentSlide = track.querySelector('.current-slide');
+        const prevSlide = currentSlide.previousElementSibling;  
+        const currentDot = dotsNav.querySelector('.current-slide');
+        const prevDot = currentDot.previousElementSibling;
+        moveToSlide(track, currentSlide, prevSlide);
+        updateDots(currentDot, prevDot);}
+    else if (event.keyCode === 39) {
+        const currentSlide = track.querySelector('.current-slide');
+        const nextSlide = currentSlide.nextElementSibling;
+        const currentDot = dotsNav.querySelector('.current-slide');
+        const nextDot = currentDot.nextElementSibling;
+        moveToSlide(track, currentSlide, nextSlide);
+        updateDots(currentDot, nextDot);
+    }
+}
+
 // slides.forEach((slide, index) => {
 //     slide.style.left = slideWidth * index + 'px';
 // }); 
