@@ -30,13 +30,13 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
 };
 
-// add autoplay - step 1 - without infinite loop
+// add autoplay with infinite loop
 
 const autoPlay = () => {
   const currentSlide = track.querySelector(".current-slide");
-  const nextSlide = currentSlide.nextElementSibling;
+  const nextSlide = currentSlide.nextElementSibling || slides[0];
   const currentDot = dotsNav.querySelector(".current-slide");
-  const nextDot = currentDot.nextElementSibling;
+  const nextDot = currentDot.nextElementSibling || dots[0];
   moveToSlide(track, currentSlide, nextSlide);
   updateDots(currentDot, nextDot);
   clearTimeout(interval);
