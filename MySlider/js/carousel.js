@@ -3,6 +3,7 @@ const slides = Array.from(track.children);
 const nextButton = document.querySelector(".carousel__button--right");
 const prevButton = document.querySelector(".carousel__button--left");
 const dotsNav = document.querySelector(".carousel__nav");
+let interval;
 const dots = Array.from(dotsNav.children);
 
 const slideWidth = slides[0].getBoundingClientRect().width;
@@ -28,6 +29,21 @@ const updateDots = (currentDot, targetDot) => {
   currentDot.classList.remove("current-slide");
   targetDot.classList.add("current-slide");
 };
+
+// add autoplay - step 1 - without infinite loop
+
+const autoPlay = () => {
+  const currentSlide = track.querySelector(".current-slide");
+  const nextSlide = currentSlide.nextElementSibling;
+  const currentDot = dotsNav.querySelector(".current-slide");
+  const nextDot = currentDot.nextElementSibling;
+  moveToSlide(track, currentSlide, nextSlide);
+  updateDots(currentDot, nextDot);
+  clearTimeout(interval);
+  interval = setTimeout(autoPlay, 3000);
+};
+
+autoPlay();
 
 // when left or right arrow key is clicked, move slides and dots
 
