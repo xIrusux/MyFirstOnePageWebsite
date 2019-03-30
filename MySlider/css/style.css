@@ -26,10 +26,11 @@ body {
   display: grid;
   place-items: center;
 }
-.container {
+/* .container {
   width: 80%;
   margin: 0 auto;
-}
+  this is for carousel but seems to maybe not be needed
+} */
 
 header {
   background: var(--background);
@@ -60,16 +61,12 @@ header {
   align-items: center;
 }
 
-header::after {
+/* header::after {
   content: "";
   display: table;
   clear: both;
-}
-
-.logo {
-  align-self: ;
-  width: 90px;
-}
+  from old nav bar - likely not needed
+} */
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
@@ -124,6 +121,7 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 17px;
+  opacity: 0;
   transition: opacity 150ms ease-in-out;
 }
 
@@ -153,6 +151,7 @@ nav a:hover {
 
   .logo {
     grid-column: 2/3;
+    width: 90px;
   }
 
   nav {
