@@ -1,17 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+
+:root {
+  --background: #282928;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: lightgrey;
-  font-family: "Work Sans", sans-serif;
+  background: var(--background);
+  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
 }
 
+.content {
+  height: 200vh;
+  /* background-image: url(//picsum.photos/1000/1000?image=924); */
+  background-color: #191919;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
 .container {
   width: 80%;
   margin: 0 auto;
 }
 
 header {
-  background: lightgrey;
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+}
+
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, 0.75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 header::after {
@@ -21,12 +67,45 @@ header::after {
 }
 
 .logo {
-  float: left;
-  width: 80px;
+  align-self: ;
+  width: 90px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #a3a3a3;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
 }
 
 nav {
-  float: right;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
 }
 
 nav ul {
@@ -36,40 +115,89 @@ nav ul {
 }
 
 nav li {
-  display: inline-block;
-  margin-left: 30px;
-  padding-top: 25px;
-
-  position: relative;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
 
 nav a {
-  color: #444;
+  color: #a3a3a3;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 17px;
+  transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover {
-  color: #000;
+  color: #dbfd11;
 }
 
-nav a::before {
-  content: "";
-  display: block;
-  height: 5px;
-  width: 100%;
-  background-color: #444;
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
 }
 
-nav a:hover::before {
-  width: 100%;
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    opacity: 0.8;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 4fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2/3;
+  }
+
+  nav {
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #a3a3a3;
+    position: absolute;
+    top: -1em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: all ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
 }
 
 .carousel {
@@ -93,7 +221,6 @@ nav a:hover::before {
 }
 
 .carousel__track {
-  padding: 0;
   margin: 0;
   list-style: none;
   position: relative;

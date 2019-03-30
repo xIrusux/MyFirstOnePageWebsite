@@ -34,6 +34,10 @@ const updateDots = (currentDot, targetDot) => {
 
 // add autoplay with infinite loop
 
+// function reduceCode(name, id, str) {
+//   const name = id.querySelector(str);
+// }
+
 const autoPlay = () => {
   const currentSlide = track.querySelector(".current-slide");
   const nextSlide = currentSlide.nextElementSibling || slides[0];
