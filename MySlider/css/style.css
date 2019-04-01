@@ -17,15 +17,16 @@ body {
   font-weight: 400;
 }
 
-.content {
-  height: 200vh;
-  /* background-image: url(//picsum.photos/1000/1000?image=924); */
+/* .content {
+  height: 3vh;
+  background-image: url(//picsum.photos/1000/1000?image=924);
   background-color: #191919;
   background-blend-mode: multiply;
   background-size: cover;
   display: grid;
   place-items: center;
-}
+  probs not needed unlesss I want content there
+} */
 /* .container {
   width: 80%;
   margin: 0 auto;
@@ -91,6 +92,11 @@ header {
 
 .nav-toggle-label span::after {
   top: 7px;
+}
+
+.logo {
+  grid-column: 2/3;
+  width: 90px;
 }
 
 nav {
@@ -199,6 +205,30 @@ nav a:hover {
   }
 }
 
+.intro {
+  background: white;
+  color: #191919;
+  padding: 100px 10vw 30px 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nutshell {
+  width: 20vh;
+}
+
+.about-me {
+  background: #a3a3a3;
+  display: grid;
+  grid-template-columns: 6vw 1fr 1fr 1fr 6vw;
+  grid-column-start: 2;
+  grid-column-gap: 4vw;
+}
+#col1 {
+  grid-column: 2 / 3;
+}
+
 .carousel {
   position: relative;
   height: 400px;
@@ -213,14 +243,13 @@ nav a:hover {
 }
 
 .carousel__track-container {
-  background: grey;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .carousel__track {
-  margin: 0;
+  margin-top: 10px;
   list-style: none;
   position: relative;
   height: 100%;
