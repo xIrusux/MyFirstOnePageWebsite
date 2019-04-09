@@ -11,32 +11,21 @@
 }
 
 body {
+  height: 100vh;
   margin: 0;
   background: var(--background);
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
 }
 
-/* .content {
-  height: 3vh;
-  background-image: url(//picsum.photos/1000/1000?image=924);
-  background-color: #191919;
-  background-blend-mode: multiply;
-  background-size: cover;
-  display: grid;
-  place-items: center;
-  probs not needed unlesss I want content there
-} */
-/* .container {
-  width: 80%;
-  margin: 0 auto;
-  this is for carousel but seems to maybe not be needed
-} */
+img {
+  width: 100px;
+}
 
-header {
+.navbar {
   background: var(--background);
   text-align: center;
-  position: fixed;
+  position: relative;
   z-index: 999;
   width: 100%;
   height: 80px;
@@ -61,13 +50,6 @@ header {
   display: flex;
   align-items: center;
 }
-
-/* header::after {
-  content: "";
-  display: table;
-  clear: both;
-  from old nav bar - likely not needed
-} */
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
@@ -149,7 +131,7 @@ nav a:hover {
     display: none;
   }
 
-  header {
+  .navbar {
     opacity: 0.8;
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 4fr) 1fr;
