@@ -23,30 +23,35 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
-    console.log(firstCard);
-  } else {
-    // second click
-    hasFlippedCard = false;
-    secondCard = this;
-    console.log(secondCard);
 
-    // do cards match?
-    console.log(firstCard.dataset.framework);
-    console.log(secondCard.dataset.framework);
-    if (firstCard.dataset.framework === secondCard.dataset.framework) {
-      // it's a match!
-      firstCard.removeEventListener("click", flipCard);
-      secondCard.removeEventListener("click", flipCard);
-    } else {
-      // not a match
-      setTimeout(() => {
-        //timeout ensures the flipping can be seen otherwise the second card woul never eben show its second face
-        firstCard.classList.remove("flip");
-        secondCard.classList.remove("flip");
-      }, 1500);
-    }
+    return;
   }
+  // second click
+  hasFlippedCard = false;
+  secondCard = this;
+
+  checkForMatch();
 }
+// do cards match?
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards(); // is it a match?
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+}
+
+function unflipCards() {
+  setTimeout(() => {
+    //timeout ensures the flipping can be seen otherwise the second card woul never eben show its second face
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+  }, 1500);
+}
+
 cards.forEach(card => card.addEventListener("click", flipCard));
 
 // Code below is for image slider
