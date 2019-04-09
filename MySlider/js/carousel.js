@@ -1,4 +1,7 @@
 const cards = document.querySelectorAll(".memory-card");
+let hasFlippedCard = false;
+let firstCard, secondCard;
+
 const track = document.querySelector(".carousel__track");
 const slides = Array.from(track.children);
 const nextButton = document.querySelector(".carousel__button--right");
@@ -11,12 +14,38 @@ const dots = Array.from(dotsNav.children);
 
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-// Code below is for memory game
-
 // flip cards
 function flipCard() {
   // in this context 'this' refers to the element clicked;
   this.classList.toggle("flip");
+  // clicked first or second time?
+  if (!hasFlippedCard) {
+    // first click
+    hasFlippedCard = true;
+    firstCard = this;
+    console.log(firstCard);
+  } else {
+    // second click
+    hasFlippedCard = false;
+    secondCard = this;
+    console.log(secondCard);
+
+    // do cards match?
+    console.log(firstCard.dataset.framework);
+    console.log(secondCard.dataset.framework);
+    if (firstCard.dataset.framework === secondCard.dataset.framework) {
+      // it's a match!
+      firstCard.removeEventListener("click", flipCard);
+      secondCard.removeEventListener("click", flipCard);
+    } else {
+      // not a match
+      setTimeout(() => {
+        //timeout ensures the flipping can be seen otherwise the second card woul never eben show its second face
+        firstCard.classList.remove("flip");
+        secondCard.classList.remove("flip");
+      }, 1500);
+    }
+  }
 }
 cards.forEach(card => card.addEventListener("click", flipCard));
 
