@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll(".memory-card");
 let hasFlippedCard = false;
+let lockBoard = false;
 let firstCard, secondCard;
 
 const track = document.querySelector(".carousel__track");
@@ -16,6 +17,10 @@ const slideWidth = slides[0].getBoundingClientRect().width;
 
 // flip cards
 function flipCard() {
+  // do not allow further card flipping while the first 2 cards unflip
+  if (lockBoard) return;
+  // do not allow double click on same card
+  if (this === firstCard) return;
   // in this context 'this' refers to the element clicked;
   this.classList.toggle("flip");
   // clicked first or second time?
@@ -27,7 +32,6 @@ function flipCard() {
     return;
   }
   // second click
-  hasFlippedCard = false;
   secondCard = this;
 
   checkForMatch();
@@ -42,15 +46,32 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
+
+  resetBoard();
 }
 
 function unflipCards() {
+  lockBoard = true;
   setTimeout(() => {
     //timeout ensures the flipping can be seen otherwise the second card woul never eben show its second face
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
+
+    resetBoard();
   }, 1500);
 }
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false]; //destructuring assignment ES6
+  [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})(); // wrap in brackets to create imediately evoked funtion + () --> therefore function will be executed right after it's definition
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 
