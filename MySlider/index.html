@@ -14,6 +14,14 @@
 
   <header></header>
   <body>
+    <div class="winner-pop-up">
+      <p>"You have won! Congratulations"</p>
+      <button class="end-memory-button" onclick="closeWinnerPopUp()">
+        <a href="#navbar-id">
+          Scroll down to website
+        </a>
+      </button>
+    </div>
     <div class="memory-game-body" id="memory-game-body-id">
       <section class="memory-game">
         <div class="memory-card" data-framework="aurelia">
@@ -67,7 +75,7 @@
       </section>
     </div>
 
-    <div class="navbar">
+    <div class="navbar" id="navbar-id">
       <img src="img/Nav-logo.png" alt="logo" class="logo" />
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <nav>

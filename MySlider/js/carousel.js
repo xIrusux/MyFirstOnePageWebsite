@@ -83,7 +83,19 @@ function itsAWin() {
     ).length === 12
   ) {
     alert("You have won!");
+    openWinnerPopUp();
   }
+}
+
+function openWinnerPopUp() {
+  console.log(
+    (document.querySelector(".winner-pop-up").style.display = "block")
+  );
+  document.querySelector(".winner-pop-up").style.display = "block";
+}
+
+function closeWinnerPopUp() {
+  document.querySelector(".winner-pop-up").style.display = "none";
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));

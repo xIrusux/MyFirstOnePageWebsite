@@ -17,6 +17,19 @@ body {
   font-weight: 400;
 }
 
+.winner-pop-up {
+  /* padding-top: 200px;
+  position: relative; */
+  display: none;
+  position: fixed;
+  bottom: 50vh;
+  right: 50%;
+  border: 3px solid #f1f1f1;
+  z-index: 9999;
+  border: 2px solid pink;
+  background: white;
+}
+
 .memory-game-body {
   display: flex;
   height: 100vh;
