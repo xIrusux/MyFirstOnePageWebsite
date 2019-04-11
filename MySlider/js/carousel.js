@@ -48,6 +48,7 @@ function disableCards() {
   secondCard.removeEventListener("click", flipCard);
 
   resetBoard();
+  itsAWin(); // is it a win?
 }
 
 function unflipCards() {
@@ -58,7 +59,7 @@ function unflipCards() {
     secondCard.classList.remove("flip");
 
     resetBoard();
-  }, 1500);
+  }, 700);
 }
 
 function resetBoard() {
@@ -66,12 +67,24 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
+// shuffle cards on pageload
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })(); // wrap in brackets to create imediately evoked funtion + () --> therefore function will be executed right after it's definition
+
+// you have won!
+function itsAWin() {
+  if (
+    document.querySelectorAll(
+      "#memory-game-body-id > section > .memory-card.flip"
+    ).length === 12
+  ) {
+    alert("You have won!");
+  }
+}
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 
