@@ -82,15 +82,11 @@ function itsAWin() {
       "#memory-game-body-id > section > .memory-card.flip"
     ).length === 12
   ) {
-    alert("You have won!");
     openWinnerPopUp();
   }
 }
 
 function openWinnerPopUp() {
-  console.log(
-    (document.querySelector(".winner-pop-up").style.display = "block")
-  );
   document.querySelector(".winner-pop-up").style.display = "block";
 }
 
@@ -99,6 +95,28 @@ function closeWinnerPopUp() {
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));
+
+// Code below is for sticky nav bar post scrolling
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {
+  myFunction();
+};
+
+// Get the header
+var navbar = document.getElementById("navbar-id");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 // Code below is for image slider
 // arrange the slides next to one another
