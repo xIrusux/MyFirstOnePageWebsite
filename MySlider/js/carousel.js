@@ -49,6 +49,7 @@ function disableCards() {
 
   resetBoard();
   itsAWin(); // is it a win?
+  fadeOut();
 }
 
 function unflipCards() {
@@ -95,6 +96,46 @@ function closeWinnerPopUp() {
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));
+
+// fade all other cards out on match
+
+// function fadeOut() {
+//   document.querySelectorAll(".memory-card").forEach(() => {
+//     style.display = "none";
+//   });
+// }
+
+// alert("hi");
+// function fadeOut() {
+//   alert("one"); //get till here
+//   if (cards.style.opacity === "") {
+//     alert("hello");
+//     cards.style.opacity = 1;
+//   } else if (cards.style.opacity === "1") {
+//     alert("hi");
+//     cards.style.opacity = 0;
+//   }
+// }
+
+// function fadeOut() {
+//   cards.forEach(card => {
+//     card.addEventListener("click", () => {
+//       if (card.style.opacity === "") {
+//         card.style.opacity = 0;
+//         console.log("forEach worked");
+//         console.log(card.style.opacity);
+//       }
+//     });
+//   });
+// }
+
+function fadeOut() {
+  cards.forEach(card => {
+    if (card.style.opacity === "" && card.className !== "memory-card flip") {
+      card.style.opacity = 0;
+    }
+  });
+}
 
 // Code below is for sticky nav bar post scrolling
 
