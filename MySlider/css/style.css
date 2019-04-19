@@ -66,6 +66,8 @@ body {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
 }
 
 .memory-card:active {
@@ -75,6 +77,16 @@ body {
 
 .memory-card.flip {
   transform: rotateY(180deg);
+}
+
+.memory-card.flip.grow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -175px;
 }
 
 .front-face,

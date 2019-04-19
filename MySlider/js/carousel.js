@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
+let cardInFocus = null;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -21,6 +22,7 @@ function flipCard() {
   if (lockBoard) return;
   // do not allow double click on same card
   if (this === firstCard) return;
+
   // in this context 'this' refers to the element clicked;
   this.classList.toggle("flip");
   // clicked first or second time?
@@ -28,12 +30,12 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
+    // console.log(firstCard.getBoundingClientRect());
 
     return;
   }
   // second click
   secondCard = this;
-
   checkForMatch();
 }
 // do cards match?
@@ -47,9 +49,11 @@ function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
 
-  resetBoard();
+  // resetBoard();
+  dontYetResetBoard();
   itsAWin(); // is it a win?
   fadeOut();
+  getPosition();
 }
 
 function unflipCards() {
@@ -60,12 +64,17 @@ function unflipCards() {
     secondCard.classList.remove("flip");
 
     resetBoard();
-  }, 700);
+  }, 800);
 }
 
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false]; //destructuring assignment ES6
   [firstCard, secondCard] = [null, null];
+}
+
+function dontYetResetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false]; //destructuring assignment ES6
+  // [firstCard, secondCard] = [null, null];
 }
 
 // shuffle cards on pageload
@@ -74,7 +83,7 @@ function resetBoard() {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
-})(); // wrap in brackets to create imediately evoked funtion + () --> therefore function will be executed right after it's definition
+})(); // wrap in brackets to create imediately evoked function + () --> therefore function will be executed right after it's definition
 
 // you have won!
 function itsAWin() {
@@ -97,45 +106,42 @@ function closeWinnerPopUp() {
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 
-// fade all other cards out on match
-
-// function fadeOut() {
-//   document.querySelectorAll(".memory-card").forEach(() => {
-//     style.display = "none";
-//   });
-// }
-
-// alert("hi");
-// function fadeOut() {
-//   alert("one"); //get till here
-//   if (cards.style.opacity === "") {
-//     alert("hello");
-//     cards.style.opacity = 1;
-//   } else if (cards.style.opacity === "1") {
-//     alert("hi");
-//     cards.style.opacity = 0;
-//   }
-// }
-
-// function fadeOut() {
-//   cards.forEach(card => {
-//     card.addEventListener("click", () => {
-//       if (card.style.opacity === "") {
-//         card.style.opacity = 0;
-//         console.log("forEach worked");
-//         console.log(card.style.opacity);
-//       }
-//     });
-//   });
-// }
+// if two cards match, fade all other cards out
 
 function fadeOut() {
-  cards.forEach(card => {
-    if (card.style.opacity === "" && card.className !== "memory-card flip") {
-      card.style.opacity = 0;
-    }
-  });
+  setTimeout(() => {
+    cards.forEach(card => {
+      if (card.style.opacity === "" && card.className !== "memory-card flip") {
+        card.style.opacity = 0;
+      } else {
+        card.classList.add("grow");
+      }
+    });
+  }, 700);
 }
+
+// Code below is to move both cards to the center of the screen via an animation -- deficit = too hard
+
+// let firstCardtop = firstCard.getBoundingClientRect().top;
+// let firstCardleft = firstCard.getBoundingClientRect().left;
+// let firstCardright = firstCard.getBoundingClientRect().right;
+
+// console.log("top", firstCardtop);
+
+// function getPosition() {
+//   const rect = firstCard.getBoundingClientRect();
+//   console.log({
+//     top: rect.top,
+//     right: rect.right,
+//     bottom: rect.bottom,
+//     left: rect.left,
+//     width: rect.width,
+//     height: rect.height,
+//     x: rect.x,
+//     y: rect.y
+//   });
+//   console.log(rect);
+// }
 
 // Code below is for sticky nav bar post scrolling
 
