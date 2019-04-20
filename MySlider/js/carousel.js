@@ -122,6 +122,7 @@ function fadeOutMemoryCard() {
 // fade in "matched card"
 
 function fadeInBigCard() {
+  document.querySelector(".memory-game").style.display = "none";
   setTimeout(() => {
     bigCards.forEach(bigCard => {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
@@ -134,6 +135,7 @@ function fadeInBigCard() {
 // fade out "matched card"
 
 function fadeOutBigCard() {
+  document.querySelector(".memory-game").style.display = "flex";
   setTimeout(() => {
     bigCards.forEach(bigCard => {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
@@ -141,7 +143,7 @@ function fadeOutBigCard() {
         fadeInMemoryCard();
       }
     });
-  }, 1000);
+  }, 2500);
 }
 
 function fadeInMemoryCard() {
@@ -153,7 +155,7 @@ function fadeInMemoryCard() {
       resetBoard();
       itsAWin();
     });
-  }, 1300);
+  }, 700);
 }
 // function fadeOut() {
 //   setTimeout(() => {
