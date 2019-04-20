@@ -121,6 +121,18 @@ body {
   backface-visibility: hidden;
 }
 
+.matched-memory-card {
+  position: relative;
+  display: none;
+}
+
+.matched-front-face {
+  height: 75vh;
+  bottom: 50vh;
+  right: 50%;
+  padding: 2vh 0px 10px 33vw;
+}
+
 .navbar {
   background: var(--background);
   text-align: center;

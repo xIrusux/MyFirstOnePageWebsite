@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".memory-card");
+const bigCards = document.querySelectorAll(".matched-memory-card");
 let cardInFocus = null;
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -51,9 +52,7 @@ function disableCards() {
 
   // resetBoard();
   dontYetResetBoard();
-  itsAWin(); // is it a win?
-  fadeOut();
-  getPosition();
+  fadeOutMemoryCard();
 }
 
 function unflipCards() {
@@ -102,45 +101,87 @@ function openWinnerPopUp() {
 
 function closeWinnerPopUp() {
   document.querySelector(".winner-pop-up").style.display = "none";
+  document.querySelector(".memory-game").style.display = "none";
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 
-// if two cards match, fade all other cards out
+// if two cards match, fade all cards out
 
-function fadeOut() {
+function fadeOutMemoryCard() {
   setTimeout(() => {
     cards.forEach(card => {
-      if (card.style.opacity === "" && card.className !== "memory-card flip") {
+      if (card.style.opacity === "" || card.style.opacity === "1") {
         card.style.opacity = 0;
-      } else {
-        card.classList.add("grow");
+        fadeInBigCard();
       }
     });
   }, 700);
 }
 
-// Code below is to move both cards to the center of the screen via an animation -- deficit = too hard
+// fade in "matched card"
 
-// let firstCardtop = firstCard.getBoundingClientRect().top;
-// let firstCardleft = firstCard.getBoundingClientRect().left;
-// let firstCardright = firstCard.getBoundingClientRect().right;
+function fadeInBigCard() {
+  setTimeout(() => {
+    bigCards.forEach(bigCard => {
+      if (bigCard.dataset.framework === firstCard.dataset.framework) {
+        bigCard.style.display = "block";
+        fadeOutBigCard();
+      }
+    });
+  }, 700);
+}
+// fade out "matched card"
 
-// console.log("top", firstCardtop);
+function fadeOutBigCard() {
+  setTimeout(() => {
+    bigCards.forEach(bigCard => {
+      if (bigCard.dataset.framework === firstCard.dataset.framework) {
+        bigCard.style.display = "none";
+        fadeInMemoryCard();
+      }
+    });
+  }, 1000);
+}
 
-// function getPosition() {
-//   const rect = firstCard.getBoundingClientRect();
-//   console.log({
-//     top: rect.top,
-//     right: rect.right,
-//     bottom: rect.bottom,
-//     left: rect.left,
-//     width: rect.width,
-//     height: rect.height,
-//     x: rect.x,
-//     y: rect.y
-//   });
-//   console.log(rect);
+function fadeInMemoryCard() {
+  setTimeout(() => {
+    cards.forEach(card => {
+      if (card.style.opacity === "0") {
+        card.style.opacity = 1;
+      }
+      resetBoard();
+      itsAWin();
+    });
+  }, 1300);
+}
+// function fadeOut() {
+//   setTimeout(() => {
+//     cards.forEach(card => {
+//       if (card.style.opacity === "" && card.className !== "memory-card flip") {
+//         card.style.opacity = 0;
+//         // } else {
+//         //   card.classList.add("grow");
+//         //   // undo();
+//       }
+//     });
+//   }, 700);
+// }
+
+// after a while reset card to normal
+
+// function undo() {
+//   setTimeout(() => {
+//     cards.forEach(card => {
+//       if (card.className === "memory-card flip grow") {
+//         card.classList.remove("grow");
+//         card.classList.remove("flip");
+//         card.classList.add("matched");
+//         card.style.opacity = 1;
+//       }
+//       card.style.opacity = 1;
+//     });
+//   }, 1000);
 // }
 
 // Code below is for sticky nav bar post scrolling
