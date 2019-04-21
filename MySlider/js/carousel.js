@@ -78,6 +78,7 @@ function dontYetResetBoard() {
 
 // shuffle cards on pageload
 (function shuffle() {
+  document.querySelector(".matched-card").style.display = "none";
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
@@ -96,7 +97,7 @@ function itsAWin() {
 }
 
 function openWinnerPopUp() {
-  document.querySelector(".winner-pop-up").style.display = "block";
+  document.querySelector(".winner-pop-up").style.display = "flex";
 }
 
 function closeWinnerPopUp() {
@@ -126,7 +127,8 @@ function fadeInBigCard() {
   setTimeout(() => {
     bigCards.forEach(bigCard => {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
-        bigCard.style.display = "block";
+        bigCard.style.display = "grid";
+        document.querySelector(".matched-card").style.display = "block";
         fadeOutBigCard();
       }
     });
@@ -140,6 +142,7 @@ function fadeOutBigCard() {
     bigCards.forEach(bigCard => {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
         bigCard.style.display = "none";
+        document.querySelector(".matched-card").style.display = "none";
         fadeInMemoryCard();
       }
     });

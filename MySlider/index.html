@@ -15,17 +15,33 @@
   <header></header>
   <body>
     <div class="winner-pop-up">
-      <p>"You have won! Congratulations"</p>
-      <button class="end-memory-button" onclick="closeWinnerPopUp()">
-        <a href="#navbar-id">
-          Scroll down to website
-        </a>
-      </button>
+      <div class="winner-pop-up-text">"You have won! Congratulations"</div>
+      <div class="winner-pop-up-buttons">
+        <button
+          class="winner-pop-up-end-memory-button"
+          onclick="closeWinnerPopUp()"
+        >
+          <a href="#navbar-id">
+            Scroll down to website
+          </a>
+        </button>
+        <button
+          class="winner-pop-up-play-again-button"
+          onclick="location.reload();"
+        >
+          <a href="#navbar-id">
+            Play again
+          </a>
+        </button>
+      </div>
     </div>
     <div class="memory-game-body" id="memory-game-body-id">
       <section class="matched-card">
         <div class="matched-memory-card" data-framework="phone">
           <img class="matched-front-face" src="img/phone.gif" alt="phone" />
+          <div class="matched-memory-card-text">
+            <div class="phone text">"test"</div>
+          </div>
         </div>
         <div class="matched-memory-card" data-framework="I-ll-find-you-all">
           <img
@@ -33,6 +49,9 @@
             src="img/Ill-find-you-all.gif"
             alt="I-ll-find-you-all"
           />
+          <div class="matched-memory-card-text">
+            <div class="Ill-find-you-all text">"test1"</div>
+          </div>
         </div>
         <div class="matched-memory-card" data-framework="cant-do-this">
           <img
@@ -40,6 +59,9 @@
             src="img/cant-do-this.gif"
             alt="cant-do-this"
           />
+          <div class="matched-memory-card-text">
+            <div class="can't-do-this text">"test2"</div>
+          </div>
         </div>
         <div class="matched-memory-card" data-framework="it-works">
           <img
@@ -47,6 +69,9 @@
             src="img/it-works.gif"
             alt="it-works"
           />
+          <div class="matched-memory-card-text">
+            <div class="it-works text">"test3"</div>
+          </div>
         </div>
         <div class="matched-memory-card" data-framework="listening-to-podcast">
           <img
@@ -54,6 +79,9 @@
             src="img/listening-to-podcast.gif"
             alt="listening-to-podcast"
           />
+          <div class="matched-memory-card-text">
+            <div class="listening-to-podcast text">"test1"</div>
+          </div>
         </div>
         <div class="matched-memory-card" data-framework="new-error">
           <img
@@ -61,6 +89,9 @@
             src="img/new-error.gif"
             alt="new-error"
           />
+          <div class="matched-memory-card-text">
+            <div class="New-error text">"test4"</div>
+          </div>
         </div>
       </section>
 

@@ -15,29 +15,49 @@ body {
   background: var(--background);
   font-family: "Open Sans Condensed", sans-serif;
   font-weight: 400;
+  position: relative;
 }
 
 .winner-pop-up {
-  /* padding-top: 200px;
-  position: relative; */
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
   position: fixed;
-  bottom: 50vh;
-  right: 50%;
-  border: 3px solid #f1f1f1;
+  left: 50%;
+  top: 40%;
+  margin-left: -17.5%;
+  border: 3px solid lightgrey;
   z-index: 9999;
-  border: 2px solid pink;
   background: white;
 }
 
+.winner-pop-up-text {
+  padding: 20px;
+}
+
+.winner-pop-up-buttons {
+}
+
+.winner-pop-up-end-memory-button {
+  padding: 10px;
+  margin: 10px;
+}
+
+.winner-pop-up-play-again-button {
+  padding: 10px;
+  margin: 10px;
+}
+
 .memory-game-body {
-  display: flex;
   height: 100%;
   background: #f1f1f1;
-  padding-bottom: 3%;
-  padding-top: 3%;
+  padding-bottom: 1%;
+  padding-top: 2.5%;
   width: 100%;
   height: 640px;
+  //needs to stay static!!
 }
 
 .memory-game {
@@ -123,16 +143,34 @@ body {
   backface-visibility: hidden;
 }
 
-.matched-memory-card {
+.matched-card {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.matched-memory-card {
+  position: absolute;
   display: none;
+  width: 100%;
+  height: 95%;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .matched-front-face {
-  height: 75vh;
-  bottom: 50vh;
-  right: 50%;
-  padding: 2vh 0px 10px 40vw;
+  height: 92%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.matched-memory-card-text {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  justify-self: center;
+  align-self: center;
 }
 
 .navbar {
