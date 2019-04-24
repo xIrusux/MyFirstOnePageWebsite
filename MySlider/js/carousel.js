@@ -129,7 +129,11 @@ function fadeInBigCard() {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
         bigCard.style.display = "grid";
         document.querySelector(".matched-card").style.display = "block";
+<<<<<<< HEAD
         //fadeOutBigCard();
+=======
+        // fadeOutBigCard();
+>>>>>>> f7c2caf5d90d18381cb965d704424283759ee635
       }
     });
   }, 700);
@@ -206,7 +210,11 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
 };
 
+<<<<<<< HEAD
 // add autoplay with infinite loop
+=======
+// add autoplay with infinite loops
+>>>>>>> f7c2caf5d90d18381cb965d704424283759ee635
 
 const autoPlay = () => {
   const currentSlide = track.querySelector(".current-slide");
