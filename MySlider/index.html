@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My First Website</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
   </head>
 
   <header></header>
@@ -29,7 +26,7 @@
           class="winner-pop-up-play-again-button"
           onclick="location.reload();"
         >
-          <a href="#navbar-id">
+          <a>
             Play again
           </a>
         </button>
@@ -40,7 +37,12 @@
         <div class="matched-memory-card" data-framework="phone">
           <img class="matched-front-face" src="img/phone.gif" alt="phone" />
           <div class="matched-memory-card-text">
-            <div class="phone text">"test"</div>
+            <div class="phone text">"When coding is LIFE"</div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
         <div class="matched-memory-card" data-framework="I-ll-find-you-all">
@@ -50,7 +52,17 @@
             alt="I-ll-find-you-all"
           />
           <div class="matched-memory-card-text">
-            <div class="Ill-find-you-all text">"test1"</div>
+            <div class="Ill-find-you-all text">
+              "DEBUGGING <br />
+              I don't know where you are, I don't know how your work, but I will
+              find you, <br />
+              and I will FIX YOU!"
+            </div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
         <div class="matched-memory-card" data-framework="cant-do-this">
@@ -60,7 +72,16 @@
             alt="cant-do-this"
           />
           <div class="matched-memory-card-text">
-            <div class="can't-do-this text">"test2"</div>
+            <div class="can't-do-this text">
+              "99 little bugs in the code. <br />
+              Take one down, patch it around <br />
+              122 little bugs in the code."
+            </div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
         <div class="matched-memory-card" data-framework="it-works">
@@ -70,7 +91,12 @@
             alt="it-works"
           />
           <div class="matched-memory-card-text">
-            <div class="it-works text">"test3"</div>
+            <div class="it-works text">"It works.... - but why?"</div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
         <div class="matched-memory-card" data-framework="listening-to-podcast">
@@ -80,7 +106,14 @@
             alt="listening-to-podcast"
           />
           <div class="matched-memory-card-text">
-            <div class="listening-to-podcast text">"test1"</div>
+            <div class="listening-to-podcast text">
+              "Listening to the Founders & Coders Podcast"
+            </div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
         <div class="matched-memory-card" data-framework="new-error">
@@ -90,7 +123,12 @@
             alt="new-error"
           />
           <div class="matched-memory-card-text">
-            <div class="New-error text">"test4"</div>
+            <div class="New-error text">"A new error - progress!"</div>
+            <button class="return-to-game-button" onclick="fadeOutBigCard();">
+              <a>
+                Return to game
+              </a>
+            </button>
           </div>
         </div>
       </section>
@@ -99,12 +137,12 @@
         <div class="memory-card" data-framework="phone">
           <div class="circle"></div>
           <img class="front-face" src="img/phone.gif" alt="phone" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="phone">
           <div class="circle"></div>
           <img class="front-face" src="img/phone.gif" alt="phone" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="I-ll-find-you-all">
           <div class="circle"></div>
@@ -113,7 +151,7 @@
             src="img/Ill-find-you-all.gif"
             alt="I-ll-find-you-all"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="I-ll-find-you-all">
           <div class="circle"></div>
@@ -122,7 +160,7 @@
             src="img/Ill-find-you-all.gif"
             alt="I-ll-find-you-all"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="cant-do-this">
           <div class="circle"></div>
@@ -131,7 +169,7 @@
             src="img/cant-do-this.gif"
             alt="cant-do-this"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="cant-do-this">
           <div class="circle"></div>
@@ -140,17 +178,17 @@
             src="img/cant-do-this.gif"
             alt="cant-do-this"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="it-works">
           <div class="circle"></div>
           <img class="front-face" src="img/it-works.gif" alt="it-works" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="it-works">
           <div class="circle"></div>
           <img class="front-face" src="img/it-works.gif" alt="it-works" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="listening-to-podcast">
           <div class="circle"></div>
@@ -159,7 +197,7 @@
             src="img/listening-to-podcast.gif"
             alt="listening-to-podcast"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="listening-to-podcast">
           <div class="circle"></div>
@@ -168,17 +206,17 @@
             src="img/listening-to-podcast.gif"
             alt="listening-to-podcast"
           />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="new-error">
           <div class="circle"></div>
           <img class="front-face" src="img/new-error.gif" alt="new-error" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
         <div class="memory-card" data-framework="new-error">
           <div class="circle"></div>
           <img class="front-face" src="img/new-error.gif" alt="new-error" />
-          <img class="back-face" src="img/Nav-logo-fox.png" alt="Backface" />
+          <img class="back-face" src="img/Triangle.png" alt="Backface" />
         </div>
       </section>
     </div>
@@ -211,9 +249,14 @@
     </div>
 
     <section class="intro">
-      <h1>Me in a Nutshell</h1>
-      <img class="nutshell" src="img/nutshell.jpg" alt="" />
-      <a href="#" class="button">A button!</a>
+      <div class="left-column">
+      <h1>Christine from the White Sausage Equator</h1>
+      <img class="bavaria" src="img/Bavaria.jpg" alt="" />
+      </div>
+      <div class="right-column">
+<div class= "quote-definition"> The Weißwurstäquator (German pronunciation: [ˌvaɪsvʊɐ̯stɛˈkvaːtoːɐ̯] ( listen), white sausage equator) is a humorous term describing the supposed cultural boundary separating Southern Germany from the North, especially Bavaria from Central Germany.</div>
+        <div class= "main-text"> Growing up on the Bavarian ... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, recusandae cum. Quidem, iste? Temporibus quo adipisci nemo omnis distinctio ab, quisquam impedit nam voluptates eum dolores, ea sapiente quasi non?</div>
+      </div>
     </section>
 
     <section class="about-me">
@@ -244,6 +287,10 @@
           qui! Nisi vitae illum eum neque quidem!
         </p>
       </div>
+    </section>
+
+    <section class="archery-arrow">
+        <img class="archery-arrow-pic" src="img/arrow (2).png" alt="" />  
     </section>
 
     <div class="carousel">
