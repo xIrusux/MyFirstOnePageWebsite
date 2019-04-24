@@ -129,7 +129,7 @@ function fadeInBigCard() {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
         bigCard.style.display = "grid";
         document.querySelector(".matched-card").style.display = "block";
-        fadeOutBigCard();
+        // fadeOutBigCard();
       }
     });
   }, 700);
@@ -146,7 +146,7 @@ function fadeOutBigCard() {
         fadeInMemoryCard();
       }
     });
-  }, 2500);
+  }, 10);
 }
 
 function fadeInMemoryCard() {
@@ -160,34 +160,6 @@ function fadeInMemoryCard() {
     });
   }, 700);
 }
-// function fadeOut() {
-//   setTimeout(() => {
-//     cards.forEach(card => {
-//       if (card.style.opacity === "" && card.className !== "memory-card flip") {
-//         card.style.opacity = 0;
-//         // } else {
-//         //   card.classList.add("grow");
-//         //   // undo();
-//       }
-//     });
-//   }, 700);
-// }
-
-// after a while reset card to normal
-
-// function undo() {
-//   setTimeout(() => {
-//     cards.forEach(card => {
-//       if (card.className === "memory-card flip grow") {
-//         card.classList.remove("grow");
-//         card.classList.remove("flip");
-//         card.classList.add("matched");
-//         card.style.opacity = 1;
-//       }
-//       card.style.opacity = 1;
-//     });
-//   }, 1000);
-// }
 
 // Code below is for sticky nav bar post scrolling
 
@@ -234,11 +206,7 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add("current-slide");
 };
 
-// add autoplay with infinite loop
-
-// function reduceCode(name, id, str) {
-//   const name = id.querySelector(str);
-// }
+// add autoplay with infinite loops
 
 const autoPlay = () => {
   const currentSlide = track.querySelector(".current-slide");
