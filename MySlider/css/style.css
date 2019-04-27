@@ -458,7 +458,61 @@ transition: width 0.5s ease;
   opacity:1;
   transform: translate3d(0,0,0) translateY(0);
   transition: opacity 1s ease, transform ease 0.25s;
+}
 
+.t-item:hover .t-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.75s ease 0.5s;
+}
+
+.t-item:hover .t-bg{
+  filter: grayscale(0);
+}
+
+.t-content {
+  transform: translate3d(0,0,0) translateY(25px);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0.1618em;
+  top: 55%;
+  opacity:0;
+}
+
+.t-content h1{
+  text-transform: uppercase;
+  color: #1779cf;
+  font-size: 1.44rem;
+  font-weight: normal;
+}
+
+.t-place{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index:1;
+  border-top:1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.t-place p{
+  font-size: 1.628rem;
+  line-height:0;
+}
+
+.t-bg {
+  transform: translate3d(0,0,0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5se ease;
+  filter: grayscale(100%);
 }
 
 .about-me {
