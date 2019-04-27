@@ -409,7 +409,11 @@ nav a:hover {
   background-color: var(--charcoal);
 }
 
-.t1-item{
+#whereLanguageLedMe:hover .t1-item{
+  width: 23.3333%;
+}
+
+.t-item{
   transform: translate3d(0,0,0);
   position: relative;
   width: 25%;
@@ -420,26 +424,41 @@ overflow: hidden;
 transition: width 0.5s ease;
 }
 
-.t2-item{
+
+.t-item:before, .t-item:after{
   transform: translate3d(0,0,0);
-  position: relative;
-  width: 25%;
-  height: 100vh;
-min-height: 600px;
-color: var(--paper);
-overflow: hidden;
-transition: width 0.5s ease;
+  content: '';
+  position: absolute;
+  left:0; 
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.t3-item{
-  transform: translate3d(0,0,0);
-  position: relative;
-  width: 25%;
-  height: 100vh;
-min-height: 600px;
-color: var(--paper);
-overflow: hidden;
-transition: width 0.5s ease;
+.t-item:after{
+  background: rgba(3,22,37,0.85);
+  opacity:1;
+  transition: opacity 0.5s ease;
+}
+
+.t-item:before{
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 75%);
+  z-index:1;
+  opacity:0;
+  transform: translate3d(0,0,0) translateY(50%);
+  transition: opacity 0.5s ease, 
+  transform 0.5 ease;
+}
+
+.t-item:hover:after{
+  opacity:0;
+}
+
+.t-item:hover:before{
+  opacity:1;
+  transform: translate3d(0,0,0) translateY(0);
+  transition: opacity 1s ease, transform ease 0.25s;
+
 }
 
 .about-me {
