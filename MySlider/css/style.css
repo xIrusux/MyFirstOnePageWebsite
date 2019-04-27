@@ -19,7 +19,12 @@ body {
   background: var(--paper);
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
+  font-size: 15px;
+  line-height: 1.75;
+  padding: 0;
+  margin:0;
   position: relative;
+
 }
 
 .winner-pop-up {
@@ -393,6 +398,48 @@ nav a:hover {
 
 .main-text {
   font-size: 23px;
+}
+
+#whereLanguageLedMe{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: center;
+  justify-content: center;
+  background-color: var(--charcoal);
+}
+
+.t1-item{
+  transform: translate3d(0,0,0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+min-height: 600px;
+color: var(--paper);
+overflow: hidden;
+transition: width 0.5s ease;
+}
+
+.t2-item{
+  transform: translate3d(0,0,0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+min-height: 600px;
+color: var(--paper);
+overflow: hidden;
+transition: width 0.5s ease;
+}
+
+.t3-item{
+  transform: translate3d(0,0,0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+min-height: 600px;
+color: var(--paper);
+overflow: hidden;
+transition: width 0.5s ease;
 }
 
 .about-me {
