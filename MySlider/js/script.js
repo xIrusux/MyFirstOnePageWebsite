@@ -164,7 +164,7 @@ function fadeInMemoryCard() {
 // Code below is for sticky nav bar post scrolling
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {
+window.onscroll = function () {
   myFunction();
 };
 
@@ -235,7 +235,7 @@ playButton.addEventListener("click", e => {
 
 // when left or right arrow key is clicked, move slides and dots
 
-document.onkeydown = function(event) {
+document.onkeydown = function (event) {
   if (event.keyCode === 37) {
     const currentSlide = track.querySelector(".current-slide");
     const prevSlide = currentSlide.previousElementSibling;

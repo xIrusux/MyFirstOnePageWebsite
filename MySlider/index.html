@@ -1,306 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My First Website</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300"
-      rel="stylesheet"
-    />
-  </head>
 
-  <header></header>
-  <body>
-    <div class="winner-pop-up">
-      <div class="winner-pop-up-text">"You have won! Congratulations"</div>
-      <div class="winner-pop-up-buttons">
-        <button
-          class="winner-pop-up-end-memory-button"
-          onclick="closeWinnerPopUp()"
-        >
-          <a href="#navbar-id">
-            Scroll down to website
-          </a>
-        </button>
-        <button
-          class="winner-pop-up-play-again-button"
-          onclick="location.reload();"
-        >
-          <a>
-            Play again
-          </a>
-        </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>My First Website</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
+</head>
+
+<header></header>
+
+<body>
+  <div class="winner-pop-up">
+    <div class="winner-pop-up-text">"You have won! Congratulations"</div>
+    <div class="winner-pop-up-buttons">
+      <button class="winner-pop-up-end-memory-button" onclick="closeWinnerPopUp()">
+        <a href="#navbar-id">
+          Scroll down to website
+        </a>
+      </button>
+      <button class="winner-pop-up-play-again-button" onclick="location.reload();">
+        <a>
+          Play again
+        </a>
+      </button>
+    </div>
+  </div>
+  <div class="memory-game-body" id="memory-game-body-id">
+    <section class="matched-card">
+      <div class="matched-memory-card" data-framework="phone">
+        <img class="matched-front-face" src="img/phone.gif" alt="phone" />
+        <div class="matched-memory-card-text">
+          <div class="phone text">"When coding is LIFE"</div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="memory-game-body" id="memory-game-body-id">
-      <section class="matched-card">
-        <div class="matched-memory-card" data-framework="phone">
-          <img class="matched-front-face" src="img/phone.gif" alt="phone" />
-          <div class="matched-memory-card-text">
-            <div class="phone text">"When coding is LIFE"</div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
+      <div class="matched-memory-card" data-framework="I-ll-find-you-all">
+        <img class="matched-front-face" src="img/Ill-find-you-all.gif" alt="I-ll-find-you-all" />
+        <div class="matched-memory-card-text">
+          <div class="Ill-find-you-all text">
+            "DEBUGGING <br />
+            I don't know where you are, I don't know how your work, but I will
+            find you, <br />
+            and I will FIX YOU!"
           </div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
         </div>
-        <div class="matched-memory-card" data-framework="I-ll-find-you-all">
-          <img
-            class="matched-front-face"
-            src="img/Ill-find-you-all.gif"
-            alt="I-ll-find-you-all"
-          />
-          <div class="matched-memory-card-text">
-            <div class="Ill-find-you-all text">
-              "DEBUGGING <br />
-              I don't know where you are, I don't know how your work, but I will
-              find you, <br />
-              and I will FIX YOU!"
-            </div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
-          </div>
-        </div>
-        <div class="matched-memory-card" data-framework="cant-do-this">
-          <img
-            class="matched-front-face"
-            src="img/cant-do-this.gif"
-            alt="cant-do-this"
-          />
-          <div class="matched-memory-card-text">
-            <div class="can't-do-this text">
-              "99 little bugs in the code. <br />
-              Take one down, patch it around <br />
-              122 little bugs in the code."
-            </div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
-          </div>
-        </div>
-        <div class="matched-memory-card" data-framework="it-works">
-          <img
-            class="matched-front-face"
-            src="img/it-works.gif"
-            alt="it-works"
-          />
-          <div class="matched-memory-card-text">
-            <div class="it-works text">"It works.... - but why?"</div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
-          </div>
-        </div>
-        <div class="matched-memory-card" data-framework="listening-to-podcast">
-          <img
-            class="matched-front-face"
-            src="img/listening-to-podcast.gif"
-            alt="listening-to-podcast"
-          />
-          <div class="matched-memory-card-text">
-            <div class="listening-to-podcast text">
-              "Listening to the Founders & Coders Podcast"
-            </div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
-          </div>
-        </div>
-        <div class="matched-memory-card" data-framework="new-error">
-          <img
-            class="matched-front-face"
-            src="img/new-error.gif"
-            alt="new-error"
-          />
-          <div class="matched-memory-card-text">
-            <div class="New-error text">"A new error - progress!"</div>
-            <button class="return-to-game-button" onclick="fadeOutBigCard();">
-              <a>
-                Return to game
-              </a>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section class="memory-game">
-        <div class="memory-card" data-framework="phone">
-          <div class="circle"></div>
-          <img class="front-face" src="img/phone.gif" alt="phone" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="phone">
-          <div class="circle"></div>
-          <img class="front-face" src="img/phone.gif" alt="phone" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="I-ll-find-you-all">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/Ill-find-you-all.gif"
-            alt="I-ll-find-you-all"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="I-ll-find-you-all">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/Ill-find-you-all.gif"
-            alt="I-ll-find-you-all"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="cant-do-this">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/cant-do-this.gif"
-            alt="cant-do-this"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="cant-do-this">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/cant-do-this.gif"
-            alt="cant-do-this"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="it-works">
-          <div class="circle"></div>
-          <img class="front-face" src="img/it-works.gif" alt="it-works" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="it-works">
-          <div class="circle"></div>
-          <img class="front-face" src="img/it-works.gif" alt="it-works" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="listening-to-podcast">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/listening-to-podcast.gif"
-            alt="listening-to-podcast"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="listening-to-podcast">
-          <div class="circle"></div>
-          <img
-            class="front-face"
-            src="img/listening-to-podcast.gif"
-            alt="listening-to-podcast"
-          />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="new-error">
-          <div class="circle"></div>
-          <img class="front-face" src="img/new-error.gif" alt="new-error" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-        <div class="memory-card" data-framework="new-error">
-          <div class="circle"></div>
-          <img class="front-face" src="img/new-error.gif" alt="new-error" />
-          <img class="back-face" src="img/Triangle.png" alt="Backface" />
-        </div>
-      </section>
-    </div>
-
-    <div class="navbar" id="navbar-id">
-      <img src="img/Nav-logo.png" alt="logo" class="logo" />
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Contact</a></li>
-          <li>
-            <a
-              href="https://www.freecodecamp.org/fcc2378fdc6-5201-4ba3-be02-ce0738bf7833"
-              target="_blank"
-              >FreeCodeCamp</a
-            >
-          </li>
-          <li>
-            <a href="https://www.codewars.com/users/xIrusux" target="_blank">
-              CodeWars</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span> </span>
-      </label>
-    </div>
-
-    <section class="intro">
-      <div class="left-column">
-        <h1>Christine from the White Sausage Equator</h1>
-        <img class="bavaria" src="img/Bavaria.jpg" alt="" />
       </div>
-      <div class="right-column">
-        <div class="quote-definition">
-          The Weißwurstäquator (German pronunciation: [ˌvaɪsvʊɐ̯stɛˈkvaːtoːɐ̯] (
-          listen), white sausage equator) is a humorous term describing the
-          supposed cultural boundary separating Southern Germany from the North,
-          especially Bavaria from Central Germany.
+      <div class="matched-memory-card" data-framework="cant-do-this">
+        <img class="matched-front-face" src="img/cant-do-this.gif" alt="cant-do-this" />
+        <div class="matched-memory-card-text">
+          <div class="can't-do-this text">
+            "99 little bugs in the code. <br />
+            Take one down, patch it around <br />
+            122 little bugs in the code."
+          </div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
         </div>
-        <div class="main-text">
-          I grew up on a farm in Bavarian countryside within the
-          Weißwurstäquator. Curious about the world, I soon realised that
-          advancing my language skills (at that time, English) was the key to
-          exploring and learning more about it.
+      </div>
+      <div class="matched-memory-card" data-framework="it-works">
+        <img class="matched-front-face" src="img/it-works.gif" alt="it-works" />
+        <div class="matched-memory-card-text">
+          <div class="it-works text">"It works.... - but why?"</div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
+        </div>
+      </div>
+      <div class="matched-memory-card" data-framework="listening-to-podcast">
+        <img class="matched-front-face" src="img/listening-to-podcast.gif" alt="listening-to-podcast" />
+        <div class="matched-memory-card-text">
+          <div class="listening-to-podcast text">
+            "Listening to the Founders & Coders Podcast"
+          </div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
+        </div>
+      </div>
+      <div class="matched-memory-card" data-framework="new-error">
+        <img class="matched-front-face" src="img/new-error.gif" alt="new-error" />
+        <div class="matched-memory-card-text">
+          <div class="New-error text">"A new error - progress!"</div>
+          <button class="return-to-game-button" onclick="fadeOutBigCard();">
+            <a>
+              Return to game
+            </a>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="after-intro">
-      <p>
-        What’s different now? I am on a new mission to get a deeper
-        understanding about our world:
-      </p>
-
-      <p>to learn the language of code</p>
+    <section class="memory-game">
+      <div class="memory-card" data-framework="phone">
+        <div class="circle"></div>
+        <img class="front-face" src="img/phone.gif" alt="phone" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="phone">
+        <div class="circle"></div>
+        <img class="front-face" src="img/phone.gif" alt="phone" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="I-ll-find-you-all">
+        <div class="circle"></div>
+        <img class="front-face" src="img/Ill-find-you-all.gif" alt="I-ll-find-you-all" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="I-ll-find-you-all">
+        <div class="circle"></div>
+        <img class="front-face" src="img/Ill-find-you-all.gif" alt="I-ll-find-you-all" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="cant-do-this">
+        <div class="circle"></div>
+        <img class="front-face" src="img/cant-do-this.gif" alt="cant-do-this" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="cant-do-this">
+        <div class="circle"></div>
+        <img class="front-face" src="img/cant-do-this.gif" alt="cant-do-this" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="it-works">
+        <div class="circle"></div>
+        <img class="front-face" src="img/it-works.gif" alt="it-works" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="it-works">
+        <div class="circle"></div>
+        <img class="front-face" src="img/it-works.gif" alt="it-works" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="listening-to-podcast">
+        <div class="circle"></div>
+        <img class="front-face" src="img/listening-to-podcast.gif" alt="listening-to-podcast" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="listening-to-podcast">
+        <div class="circle"></div>
+        <img class="front-face" src="img/listening-to-podcast.gif" alt="listening-to-podcast" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="new-error">
+        <div class="circle"></div>
+        <img class="front-face" src="img/new-error.gif" alt="new-error" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
+      <div class="memory-card" data-framework="new-error">
+        <div class="circle"></div>
+        <img class="front-face" src="img/new-error.gif" alt="new-error" />
+        <img class="back-face" src="img/Triangle.png" alt="Backface" />
+      </div>
     </section>
+  </div>
 
-    <section id="whereLanguageLedMe">
+  <div class="navbar" id="navbar-id">
+    <img src="img/Nav-logo.png" alt="logo" class="logo" />
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <a href="https://www.freecodecamp.org/fcc2378fdc6-5201-4ba3-be02-ce0738bf7833"
+            target="_blank">FreeCodeCamp</a>
+        </li>
+        <li>
+          <a href="https://www.codewars.com/users/xIrusux" target="_blank">
+            CodeWars</a>
+        </li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span> </span>
+    </label>
+  </div>
 
-<div class="before-timeline">
-  <p> What learning English unlocked for me:
+  <section class="intro">
+    <div class="middle-column">
+      <h1>Christine from the White Sausage Equator</h1>
+    </div>
+    <div class="left-column">
+      <img class="bavaria" src="img/Bavaria.jpg" alt="" />
+    </div>
+    <div class="right-column">
+      <div class="quote-definition">
+        The Weißwurstäquator (German pronunciation: [ˌvaɪsvʊɐ̯stɛˈkvaːtoːɐ̯] (
+        listen), white sausage equator) is a humorous term describing the
+        supposed cultural boundary separating Southern Germany from the North,
+        especially Bavaria from Central Germany.
+      </div>
+      <div class="main-text">
+        I grew up on a farm in Bavarian countryside within the
+        Weißwurstäquator. Curious about the world, I soon realised that
+        advancing my language skills (at that time, English) was the key to
+        exploring and learning more about it.
+      </div>
+    </div>
+  </section>
+
+  <section class="after-intro">
+    <p>
+      What’s different now? I am on a new mission to get a deeper
+      understanding about our world:
     </p>
-</div>
-<div class="timeline">
+
+    <p>to learn the language of code</p>
+  </section>
+
+  <section id="whereLanguageLedMe">
+
+    <div class="before-timeline">
+      <p> What learning English unlocked for me:
+      </p>
+    </div>
+    <div class="timeline">
       <div class="t-item" id="t1-item">
         <!-- <img class="timeline1Background" src="img/tanzania.jpg" alt="" /> -->
         <div class="t-bg" id="t1-bg">
           <img class="tanzania" src="img/tanzania.jpg" alt="" />
         </div>
         <div class="t-place" id="t1-place">
-            <img class="locked" src="img/locked.png">
+          <img class="locked" src="img/locked.png">
         </div>
 
         <div class="t-content" id="t1-content">
           <h1>Tanzania</h1>
           <p>
-            Learning English allowed me to volunteer in Tanzania,  teaching children and working together with the women in Mama Hindu’s children and women’s development center.
+            Learning English allowed me to volunteer in Tanzania, teaching children and working together with the women
+            in Mama Hindu’s children and women’s development center.
           </p>
         </div>
       </div>
@@ -312,7 +260,7 @@
         </div>
 
         <div class="t-place" id="t2-place">
-            <img class="locked" src="img/locked.png">
+          <img class="locked" src="img/locked.png">
         </div>
 
         <div class="t-content" id="t2-content">
@@ -335,94 +283,171 @@
         <div class="t-content" id="t3-content">
           <h1>Cambridge</h1>
           <p>
-            and all of that gave me the confidence and motivation to read International Business in Cambridge where I wrote my bachelor thesis and began my life in the UK.
+            and all of that gave me the confidence and motivation to read International Business in Cambridge where I
+            wrote my bachelor thesis and began my life in the UK.
           </p>
         </div>
       </div>
     </div>
-    </section>
+  </section>
 
-    <div class="after-intro">
-        <p> I am now working as a project manager at Qubit, a website personalisation platform. Together with my team, my job is to bring new features of a website to live and to take a strategy from idea to reality. <br>
-        </p>
-        <p>
-            One of my biggest projects so far was deploying a technical support process and then coordinating it. 
-        </p>
-        <p>  
-            It’s been an amazing few years and a lot of these experiences were made possible by the fact that I spoke English.  
-          </p>
-      </div>
+  <div class="after-whereLanguageLedMe">
+    <p>
+      I am now working as a project manager at Qubit, a website personalisation platform. Together with my team, my job
+      is to bring new features of a website to live and to take a strategy from idea to reality. <br>
+    </p>
+    <p>
+      One of my biggest projects so far was deploying a technical support process and then coordinating it.
+    </p>
+    <p>
+      It’s been an amazing few years and a lot of these experiences were made possible by the fact that I spoke English.
+    </p>
+  </div>
 
-    <section class="about-me">
-      <div class="column" id="col1">
-        <h2>This is some text</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-          dolorum ad tempore distinctio deleniti excepturi corporis assumenda
-          dolores at obcaecati quis minima! Tenetur tempora dignissimos quidem
-          totam, aliquid aliquam reprehenderit.
-        </p>
-      </div>
-      <div class="column" id="col2">
-        <h2>This is some text</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quae
-          culpa aperiam vitae ipsum nihil dicta minima dolore vel et nemo
-          impedit aliquam, voluptate iusto adipisci quod exercitationem ullam
-          eveniet.
-        </p>
-      </div>
-      <div class="column" id="col3">
-        <h2>This is some text</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Necessitatibus illum, quisquam dolorem blanditiis sapiente libero ipsa
-          assumenda voluptatibus explicabo corrupti aliquam tenetur, delectus
-          qui! Nisi vitae illum eum neque quidem!
-        </p>
-      </div>
-    </section>
+  <div class="container">
+    <div class="row">
 
-    <section class="archery-arrow">
-      <img class="archery-arrow-pic" src="img/arrow (2).png" alt="" />
-    </section>
+      <div class="col-md-12">
+        <div class="main-timeline">
 
-    <div class="carousel">
-      <button class="carousel__button carousel__button--left">
-        <img src="img/left-arrow.png" alt="" />
-      </button>
+          <div class="timeline">
+            <div class="logo"><img class="logo-image" src="img/geek.png">
+              </img></div>
+            <a class="timeline-content">
+              <h3 class="title"> Detail</h3>
+              <p class="description">
+                As a project manager, I can be a bit of a perfectionist, I enjoy being specific.
+                Programming has allowed me to geek out on the details, and is a place where I don’t have to hold myself
+                back.
+              </p>
+            </a>
+          </div>
 
-      <div class="carousel__track-container">
-        <ul class="carousel__track">
-          <li class="carousel__slide current-slide">
-            <img class="carousel__image" src="img/a.jpg" alt="" />
-          </li>
-          <li class="carousel__slide">
-            <img class="carousel__image" src="img/b.jpg" alt="" />
-          </li>
-          <li class="carousel__slide">
-            <img class="carousel__image" src="img/c.jpg" alt="" />
-          </li>
-        </ul>
-      </div>
+          <div class="timeline">
+            <div class="logo"><img class="logo-image" src="img/work.png">
+              </img></div>
+            <a class="timeline-content" id="dark-content">
+              <h3 class="title"> Work</h3>
+              <p class="description">
+                A project with a tight deadline first had me tinkering with CSS that was not yet quite right. It was for
+                a delivery bar threshold with many layers of CSS. Fixing the problem gave me butterflies! I was hooked!
+              </p>
+            </a>
+          </div>
 
-      <button class="carousel__button carousel__button--right">
-        <img src="img/right-arrow.png" alt="" />
-      </button>
-      <button class="carousel__button carousel__button--pause">
-        <img src="img/pause-button.png" alt="" />
-      </button>
-      <button class="carousel__button carousel__button--play">
-        <img src="img/play-button.png" alt="" />
-      </button>
+          <div class="timeline">
+            <div class="logo"> <img class="logo-image" src="img/universit.png">
+              </img>
+            </div>
+            <a class="timeline-content" id="dark-content">
+              <h3 class="title"> University</h3>
+              <p class="description">
+                I started to like programming during lectures on html and my sql as part of my degree.
+                But I had doubts: “If I become a developer, will I sit in a basement all day, behind a laptop and in
+                isolation from others?”
 
-      <div class="carousel__nav">
-        <button class="carousel__indicator current-slide"></button>
-        <button class="carousel__indicator"></button>
-        <button class="carousel__indicator"></button>
+                My picture of programming was heavily skewed and it took me two jobs of working closely with developers
+                to fully realise that.
+
+                Coding is a team effort and there are so many ways to use the skill to make a positive impact in
+                society. It does not have to be a lonely profession.
+              </p>
+            </a>
+          </div>
+
+          <div class="timeline">
+            <div class="logo"> <img class="logo-image" src="img/busyad.png">
+              </img>
+            </div>
+            <a class="timeline-content">
+              <h3 class="title"> Irusu</h3>
+              <p class="description">
+                When I had to come up with a github handle, I decided it would be: xIrusux, which is Japanese and
+                translates to
+                “pretending to be out when someone knocks at your door.”
+
+                This word sums up my feeling when I code. Sometimes I get so zoned in I feel like putting up a sign near
+                myself saying “gone coding, back later”.
+              </p>
+            </a>
+          </div>
+          <!-- <img class="sprout" src="img/sprout.png"> maybe add in later-->
+        </div>
       </div>
     </div>
+  </div>
 
-    <script src="js/script.js"></script>
-  </body>
+  <section class="about-me">
+    <div class="column" id="col1">
+      <h2>This is some text</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+        dolorum ad tempore distinctio deleniti excepturi corporis assumenda
+        dolores at obcaecati quis minima! Tenetur tempora dignissimos quidem
+        totam, aliquid aliquam reprehenderit.
+      </p>
+    </div>
+    <div class="column" id="col2">
+      <h2>This is some text</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quae
+        culpa aperiam vitae ipsum nihil dicta minima dolore vel et nemo
+        impedit aliquam, voluptate iusto adipisci quod exercitationem ullam
+        eveniet.
+      </p>
+    </div>
+    <div class="column" id="col3">
+      <h2>This is some text</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Necessitatibus illum, quisquam dolorem blanditiis sapiente libero ipsa
+        assumenda voluptatibus explicabo corrupti aliquam tenetur, delectus
+        qui! Nisi vitae illum eum neque quidem!
+      </p>
+    </div>
+  </section>
+
+  <section class="archery-arrow">
+    <img class="archery-arrow-pic" src="img/arrow (2).png" alt="" />
+  </section>
+
+  <div class="carousel">
+    <button class="carousel__button carousel__button--left">
+      <img src="img/left-arrow.png" alt="" />
+    </button>
+
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        <li class="carousel__slide current-slide">
+          <img class="carousel__image" src="img/a.jpg" alt="" />
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="img/b.jpg" alt="" />
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="img/c.jpg" alt="" />
+        </li>
+      </ul>
+    </div>
+
+    <button class="carousel__button carousel__button--right">
+      <img src="img/right-arrow.png" alt="" />
+    </button>
+    <button class="carousel__button carousel__button--pause">
+      <img src="img/pause-button.png" alt="" />
+    </button>
+    <button class="carousel__button carousel__button--play">
+      <img src="img/play-button.png" alt="" />
+    </button>
+
+    <div class="carousel__nav">
+      <button class="carousel__indicator current-slide"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>

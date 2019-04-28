@@ -44,8 +44,7 @@ body {
   padding: 20px;
 }
 
-.winner-pop-up-buttons {
-}
+.winner-pop-up-buttons {}
 
 .winner-pop-up-end-memory-button {
   padding: 10px;
@@ -65,6 +64,12 @@ body {
   width: 100%;
   height: 640px;
   //needs to stay static!!
+}
+
+@media screen and (max-width: 545px) {
+  .memory-game-body {
+    display: none;
+  }
 }
 
 .memory-game {
@@ -212,7 +217,7 @@ body {
   left: -9999px !important;
 }
 
-.nav-toggle:focus ~ .nav-toggle-label {
+.nav-toggle:focus~.nav-toggle-label {
   outline: 3px solid rgba(lightblue, 0.75);
 }
 
@@ -292,11 +297,11 @@ nav a:hover {
   color: var(--silk);
 }
 
-.nav-toggle:checked ~ nav {
+.nav-toggle:checked~nav {
   transform: scale(1, 1);
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked~nav a {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;
 }
@@ -339,6 +344,7 @@ nav a:hover {
     margin-left: 3em;
     margin-bottom: 0;
   }
+
   nav a {
     opacity: 1;
     position: relative;
@@ -379,11 +385,15 @@ nav a:hover {
 }
 
 .bavaria {
-  width: 70vh;
+  width: 100%;
 }
 
 .right-column {
   grid-column: 3 / 4;
+}
+
+.middle-column {
+  grid-column: 2/4;
 }
 
 .quote-definition {
@@ -412,22 +422,37 @@ nav a:hover {
   grid-column: 2/3
 }
 
+.after-whereLanguageLedMe {
+  font-size: 23px;
+  background: var(--silk);
+  padding-bottom: 3%;
+  display: grid;
+  grid-template-columns: 8vw 1fr 8vw;
+}
+
+.after-whereLanguageLedMe p {
+  margin: 0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 2/3
+}
+
 #whereLanguageLedMe {
   background-color: var(--charcoal);
 }
 
-.before-timeline p{
-margin:0;
-text-align: center;
-font-size: 23px;
-padding: 2% 2% 2% 2%;
-color: var(--silk);
+.before-timeline p {
+  margin: 0;
+  text-align: center;
+  font-size: 23px;
+  padding: 2% 2% 2% 2%;
+  color: var(--silk);
 }
 
 .timeline {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
   flex-flow: center;
   justify-content: center;
 }
@@ -465,11 +490,9 @@ color: var(--silk);
 }
 
 .t-item:before {
-  background: linear-gradient(
-    180deg,
+  background: linear-gradient(180deg,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 75%
-  );
+    rgba(0, 0, 0, 1) 75%);
   z-index: 1;
   opacity: 0;
   transform: translate3d(0, 0, 0) translateY(50%);
@@ -497,7 +520,7 @@ color: var(--silk);
 }
 
 .t-item:hover .t-place .locked {
- display: none;
+  display: none;
 }
 
 .t-content {
@@ -523,13 +546,13 @@ color: var(--silk);
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
-  padding:4px 0px 0px 0px;
+  padding: 4px 0px 0px 0px;
   border-top: 1px solid var(--paper);
   border-bottom: 1px solid var(--paper);
 }
 
 .locked {
-  height:50px;
+  height: 50px;
 }
 
 .t-bg {
@@ -556,6 +579,188 @@ color: var(--silk);
 #col1 {
   grid-column: 2 / 3;
 }
+
+.col-md-12 {
+  display: grid;
+  grid-template-columns: 8vw 1fr 8vw;
+  background: white;
+}
+
+.main-timeline {
+  padding-top: 50px;
+  overflow: hidden;
+  position: relative;
+  grid-column: 2/3;
+}
+
+.main-timeline:before {
+  content: "";
+  width: 7px;
+  height: 100px;
+  background: var(--charcoal);
+  margin: 0 auto;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+}
+
+.main-timeline .timeline {
+  width: 50%;
+  float: left;
+  padding: 20px 60px;
+  border-top: 7px solid var(--charcoal);
+  border-right: 7px solid var(--charcoal);
+  border-radius: 0 30px 0 0;
+  position: relative;
+  right: -3.5px;
+}
+
+.main-timeline .logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background: var(--palegold);
+  border: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  box-shadow: 0 0 0 2px var(--palegold);
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+
+/* .sprout {
+  position: relative;
+  height: 120px;
+  text-align: center;
+  padding: 0 0 0 44%;
+} maybe add back in later*/
+
+.main-timeline .logo-image {
+  height: 30px;
+  width: 30px;
+  margin-top: 20%;
+}
+
+#dark-content {
+  color: var(--charcoal);
+}
+
+.main-timeline .timeline-content {
+  display: block;
+  padding: 30px 10px 10px;
+  border-radius: 20px;
+  background: var(--palegold);
+  color: var(--paper);
+  position: relative;
+}
+
+.main-timeline .timeline-content:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.main-timeline .timeline-content:before,
+.main-timeline .timeline-content:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--palegold);
+  border: 1px solid white;
+  position: absolute;
+  top: -35px;
+  left: 50px;
+}
+
+.main-timeline .timeline-content:after {
+  left: auto;
+  right: 50px;
+}
+
+.main-timeline .title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.main-timeline .description {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.main-timeline .timeline:nth-child(2n) {
+  border-right: none;
+  border-left: 7px solid var(--charcoal);
+  border-radius: 30px 0 0 0;
+  right: auto;
+  left: -3.5px;
+}
+
+.main-timeline .timeline:nth-child(2n) .logo {
+  left: auto;
+  right: 0;
+}
+
+.main-timeline .timeline:nth-child(2) {
+  margin-top: 130px;
+}
+
+.main-timeline .timeline:nth-child(odd) {
+  margin: -130px 0 30px 0;
+}
+
+.main-timeline .timeline:nth-child(even) {
+  margin-bottom: 80px;
+}
+
+.main-timeline .timeline:first-child,
+
+.main-timeline .timeline:last-child:nth-child(even) {
+  margin: 0 0 30px 0;
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content,
+.main-timeline .timeline:nth-child(2n) .timeline-content:before,
+.main-timeline .timeline:nth-child(2n) .timeline-content:after,
+.main-timeline .timeline:nth-child(2n) .logo {
+  background: var(--paper);
+}
+
+.main-timeline .timeline:nth-child(2n) .logo {
+  box-shadow: 0 0 0 2px var(--paper);
+}
+
+.main-timeline .timeline:nth-child(3n) .timeline-content,
+.main-timeline .timeline:nth-child(3n) .timeline-content:before,
+.main-timeline .timeline:nth-child(3n) .timeline-content:after,
+.main-timeline .timeline:nth-child(3n) .logo {
+  background: var(--silk);
+}
+
+.main-timeline .timeline:nth-child(3n) .logo {
+  box-shadow: 0 0 0 2px var(--silk);
+}
+
+.main-timeline .timeline:nth-child(4n) .timeline-content,
+.main-timeline .timeline:nth-child(4n) .timeline-content:before,
+.main-timeline .timeline:nth-child(4n) .timeline-content:after,
+.main-timeline .timeline:nth-child(4n) .logo {
+  background: var(--charcoal);
+}
+
+.main-timeline .timeline:nth-child(4n) .logo {
+  box-shadow: 0 0 0 2px var(--charcoal);
+}
+
+
+
+
 
 .archery-arrow-pic {
   width: 20vh;
