@@ -586,6 +586,21 @@ nav a:hover {
   background: white;
 }
 
+.before-tree{
+    font-size: 23px;
+    background: white;
+    padding-bottom: 3%;
+    display: grid;
+    grid-template-columns: 8vw 1fr 8vw;
+  }
+  
+.before-tree p{
+    margin: 0;
+    text-align: center;
+    padding: 2% 2% 2% 2%;
+    grid-column: 2/3
+  } 
+
 .main-timeline {
   padding-top: 50px;
   overflow: hidden;
@@ -759,8 +774,56 @@ nav a:hover {
 }
 
 
+.mission{
+font-size: 23px;
+  background: white;
+  padding-bottom: 3%;
+  display: grid;
+  grid-template-columns: 8vw 1fr 8vw;
+}
 
+.mission h1{
+  margin:  0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 2/3
+}
+.mission p{
+  margin: 0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 2/3
+}
 
+.foundersAndCoders{
+  font-size: 23px;
+  background: var(--charcoal);
+  color: var(--paper);
+  padding-bottom: 3%;
+  display: grid;
+  grid-template-columns: 8vw 1fr 1fr 8vw;
+}
+
+.fac-middle-column{
+  margin:  0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 2/4; 
+}
+
+.fac-left-column{
+  margin:  0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 2/3;
+}
+
+.fac-right-column{
+  margin: 0;
+  text-align: center;
+  padding: 2% 2% 2% 2%;
+  grid-column: 3/4;
+}
 
 .archery-arrow-pic {
   width: 20vh;
