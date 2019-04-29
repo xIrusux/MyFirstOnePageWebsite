@@ -245,7 +245,7 @@ document.onkeydown = function (event) {
     updateDots(currentDot, prevDot);
   } else if (event.keyCode === 39) {
     const currentSlide = track.querySelector(".current-slide");
-    const nextSlide = currentSlide.nextElementSibling;
+    const nextSlide = currentSlide.nextElementSibling || slides[0];
     const currentDot = dotsNav.querySelector(".current-slide");
     const nextDot = currentDot.nextElementSibling;
     moveToSlide(track, currentSlide, nextSlide);
