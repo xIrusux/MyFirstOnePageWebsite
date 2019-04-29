@@ -306,7 +306,7 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 546px) {
   .nav-toggle-label {
     display: none;
   }
@@ -368,7 +368,7 @@ nav a:hover {
   }
 }
 
-@media screen and (min-width: 545px) {
+@media screen and (min-width: 546px) {
   .intro {
     background: white;
     color: #191919;
@@ -410,9 +410,28 @@ nav a:hover {
   .main-text {
     font-size: 22px;
   }
+
+  .after-intro {
+    font-size: 23px;
+    font-weight: 700;
+    background: white;
+    padding-top: 3%;
+    padding-bottom: 6%;
+    display: grid;
+    grid-template-columns: 8vw 1fr 8vw;
+  }
+  
+  .after-intro-border {
+    margin: 0;
+    text-align: center;
+    padding: 1% 1% 1% 1%;
+    grid-column: 2/3;
+    padding: 15px;
+    border: solid 2px var(--palegold);
+  }
 }
 
-@media screen and (max-width: 546px) {
+@media screen and (max-width: 545px) {
   .intro {
     background: white;
     color: #191919;
@@ -420,9 +439,7 @@ nav a:hover {
     display: grid;
     flex-direction: row;
     align-items: center;
-    grid-template-rows: 0.3fr 1fr 1fr;
-    /* grid--start: 2;
-  grid-column-gap: 4vw; */
+    grid-template-rows: 0.2fr 1fr 1fr;
   }
 
   .left-column {
@@ -441,7 +458,7 @@ nav a:hover {
   .middle-column {
     grid-row: 1/2;
     padding-bottom: 2%;
-    padding-top: 1%;
+    padding: 0 5% 0 5%;
   }
 
   .quote-definition {
@@ -453,30 +470,31 @@ nav a:hover {
 
   .main-text {
     font-size: 22px;
+    padding: 0 5% 0 5%;
+  }
+
+  .after-intro {
+    font-size: 23px;
+    font-weight: 700;
+    background: white;
+    padding-top: 3%;
+    padding-bottom: 20%;
+    display: grid;
+    grid-template-columns: 8vw 1fr 8vw;
+  }
+
+  .after-intro-border {
+    margin: 0;
+    text-align: center;
+    padding: 1% 1% 1% 1%;
+    grid-column: 2/3;
+    padding: 15px;
+    border: solid 2px var(--palegold);
   }
 }
 
-
-.after-intro {
-  font-size: 23px;
-  font-weight: 700;
-  background: white;
-  padding-top: 3%;
-  padding-bottom: 6%;
-  display: grid;
-  grid-template-columns: 8vw 1fr 8vw;
-}
-
-.after-intro-border {
-  margin: 0;
-  text-align: center;
-  padding: 1% 1% 1% 1%;
-  grid-column: 2/3;
-  padding: 15px;
-  border: solid 2px var(--palegold);
-}
-
-
+@media screen and (min-width: 546px) {
+  
 #whereLanguageLedMe {
   background-color: var(--charcoal);
 }
@@ -490,7 +508,7 @@ nav a:hover {
   text-transform: uppercase;
 }
 
-.timeline {
+  .timeline {
   display: flex;
   flex-direction: row;
   /* flex-wrap: nowrap; */
@@ -609,8 +627,76 @@ nav a:hover {
   transition: filter 0.5se ease;
   filter: grayscale(100%);
 }
+}
 
-@media screen and (min-width: 545px) {
+@media screen and (max-width: 545px) {
+#whereLanguageLedMe {
+  font-size: 22px;
+  background-color: var(--paper);
+  height: 173vh;
+}
+
+.locked{
+  display: none;
+}
+
+.t-bg{
+  display: none;
+}
+
+.t-content{
+  margin: 14% 4% 4% 4%;
+  background: var(--paper);
+  opacity: 0.8;
+}
+
+#t2-content{
+margin-top: 50%;
+}
+
+.timeline{
+  display: grid;
+  grid-template-rows: 5px 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.before-timeline {
+  padding: 50px 4% 0px 4%;
+  grid-row: 1/2;
+  font-size: 23px;
+  text-align: center;
+  color: var(--palegold);
+}
+
+.t-item{
+text-align: center;
+}
+
+#t1-item {
+  grid-row: 2/3;
+  background-image: url(../img/tanzania.jpg);
+  background-size: cover;
+  height: 100%;
+}
+
+#t2-item {
+  grid-row: 3/4;
+  background-image: url(../img/australia4.JPG);
+  background-size: cover;
+  height: 100%;
+}
+
+#t3-item {
+  grid-row: 4/5;
+  background-image: url(../img/cambridge4.jpg);
+  background-size: cover;
+  height: 100%;
+}
+
+}
+
+@media screen and (min-width: 546px) {
   .after-whereLanguageLedMe {
     font-size: 22px;
     background: var(--charcoal);
@@ -638,7 +724,7 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 546px) {
+@media screen and (max-width: 545px) {
   .after-whereLanguageLedMe {
     font-size: 22px;
     background: var(--charcoal);
@@ -662,7 +748,7 @@ nav a:hover {
   }
 
   .after-whereLanguageLedMe-text p {
-    padding: 2% 2% 2% 2%;
+    padding: 2% 5% 2% 5%;
   }
 }
 
