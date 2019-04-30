@@ -529,7 +529,7 @@ nav a:hover {
 
 @media screen and (min-width: 546px) {
 
-  #whereLanguageLedMe {
+  #where-language-led-me {
     background-color: var(--charcoal);
   }
 
@@ -664,7 +664,7 @@ nav a:hover {
 }
 
 @media screen and (max-width: 545px) {
-  #whereLanguageLedMe {
+  #where-language-led-me {
     font-size: 22px;
     background-color: var(--paper);
     height: 182vh;
@@ -733,7 +733,7 @@ nav a:hover {
 }
 
 @media screen and (min-width: 546px) {
-  .after-whereLanguageLedMe {
+  .after-where-language-led-me {
     font-size: 22px;
     background: var(--charcoal);
     color: white;
@@ -744,24 +744,24 @@ nav a:hover {
     grid-template-columns: 8vw 1fr 1.5fr 8vw;
   }
 
-  .after-whereLanguageLedMe-image {
+  .after-where-language-led-me-image {
     grid-column: 2/3;
     height: 15%;
   }
 
-  .after-whereLanguageLedMe-text {
+  .after-where-language-led-me-text {
     margin: 0;
     text-align: justify;
     grid-column: 3/4;
   }
 
-  .after-whereLanguageLedMe-text p {
+  .after-where-language-led-me-text p {
     padding: 2% 2% 2% 2%;
   }
 }
 
 @media screen and (max-width: 545px) {
-  .after-whereLanguageLedMe {
+  .after-where-language-led-me {
     font-size: 22px;
     background: var(--charcoal);
     color: white;
@@ -772,18 +772,18 @@ nav a:hover {
     grid-template-rows: 0.2fr 1fr;
   }
 
-  .after-whereLanguageLedMe-image {
+  .after-where-language-led-me-image {
     grid-row: 1/2;
     height: 50%;
   }
 
-  .after-whereLanguageLedMe-text {
+  .after-where-language-led-me-text {
     margin: 0;
     text-align: justify;
     grid-row: 2/3;
   }
 
-  .after-whereLanguageLedMe-text p {
+  .after-where-language-led-me-text p {
     padding: 2% 5% 2% 5%;
   }
 }

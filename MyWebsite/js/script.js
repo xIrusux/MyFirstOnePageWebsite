@@ -30,8 +30,6 @@ function flipCard() {
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
-    firstCard = this;
-    // console.log(firstCard.getBoundingClientRect());
 
     return;
   }
@@ -58,7 +56,7 @@ function disableCards() {
 function unflipCards() {
   lockBoard = true;
   setTimeout(() => {
-    //timeout ensures the flipping can be seen otherwise the second card woul never eben show its second face
+    //timeout ensures the flipping can be seen otherwise the second card would never even show its second face
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
 
@@ -73,7 +71,6 @@ function resetBoard() {
 
 function dontYetResetBoard() {
   [hasFlippedCard, lockBoard] = [false, false]; //destructuring assignment ES6
-  // [firstCard, secondCard] = [null, null];
 }
 
 // shuffle cards on pageload
@@ -105,9 +102,12 @@ function closeWinnerPopUp() {
   document.querySelector(".memory-game-body").style.display = "none";
 }
 
+// Welcome to the game pop up which only fires on desktop
+
 (function openMemoryPopUp() {
+  if (window.outerWidth && window.outerWidth > 480) {
   document.querySelector(".memory-pop-up").style.display = "block";
-})();
+}})();
 
 function closeMemoryPopUp() {
   document.querySelector(".memory-pop-up").style.display = "none";
@@ -141,6 +141,7 @@ function fadeInBigCard() {
     });
   }, 700);
 }
+
 // fade out "matched card"
 
 function fadeOutBigCard() {
