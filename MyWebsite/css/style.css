@@ -256,7 +256,7 @@ body {
   top: 7px;
 }
 
-.logo {
+.nav-logo {
   grid-column: 2/3;
   width: 90px;
 }
@@ -633,7 +633,7 @@ nav a:hover {
   #whereLanguageLedMe {
     font-size: 22px;
     background-color: var(--paper);
-    height: 173vh;
+    height: 182vh;
   }
 
   .locked {
@@ -657,12 +657,14 @@ nav a:hover {
   .timeline {
     display: grid;
     grid-template-rows: 5px 1fr 1fr 1fr;
+    grid-row-gap: 15px;
     align-items: center;
     justify-items: center;
   }
 
   .before-timeline {
-    padding: 50px 4% 0px 4%;
+    margin-top: 20px;
+    padding: 60px 4% 0px 4%;
     grid-row: 1/2;
     font-size: 23px;
     text-align: center;
