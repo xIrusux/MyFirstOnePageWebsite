@@ -83,7 +83,7 @@ function dontYetResetBoard() {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
-})(); // wrap in brackets to create imediately evoked function + () --> therefore function will be executed right after it's definition
+})(); // wrap in brackets to create imedeately evoked function + () --> therefore function will be executed right after it's definition
 
 // you have won!
 function itsAWin() {
@@ -103,6 +103,14 @@ function openWinnerPopUp() {
 function closeWinnerPopUp() {
   document.querySelector(".winner-pop-up").style.display = "none";
   document.querySelector(".memory-game-body").style.display = "none";
+}
+
+(function openMemoryPopUp() {
+  document.querySelector(".memory-pop-up").style.display = "block";
+})();
+
+function closeMemoryPopUp() {
+  document.querySelector(".memory-pop-up").style.display = "none";
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));
