@@ -102,7 +102,7 @@ function openWinnerPopUp() {
 
 function closeWinnerPopUp() {
   document.querySelector(".winner-pop-up").style.display = "none";
-  document.querySelector(".memory-game").style.display = "none";
+  document.querySelector(".memory-game-body").style.display = "none";
 }
 
 cards.forEach(card => card.addEventListener("click", flipCard));
@@ -129,7 +129,6 @@ function fadeInBigCard() {
       if (bigCard.dataset.framework === firstCard.dataset.framework) {
         bigCard.style.display = "grid";
         document.querySelector(".matched-card").style.display = "block";
-        //fadeOutBigCard();
       }
     });
   }, 700);

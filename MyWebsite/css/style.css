@@ -44,12 +44,16 @@ body {
   padding: 20px;
 }
 
-.winner-pop-up-buttons {}
-
 .winner-pop-up-end-memory-button {
   padding: 10px;
   margin: 10px;
 }
+
+.winner-pop-up-end-memory-button a{
+text-decoration: none;
+color: black;
+}
+
 
 .winner-pop-up-play-again-button {
   padding: 10px;
@@ -1115,14 +1119,22 @@ nav a:hover {
   .fac-left-column {
     margin: 0;
     text-align: center;
-    padding: 2% 2% 2% 2%;
+    padding: 6% 6% 6% 6%;
     grid-column: 2/3;
     background: var(--palegold);
     color: var(--charcoal);
   }
 
+  .fac-left-column h2 {
+    font-size: 20px;
+  }
+
+  .fac-right-column h2 {
+    font-size: 20px;
+  }
+
   .fac-left-column p {
-    padding: 6% 6% 6% 6%;
+    padding: 5% 5% 5% 5%;
   }
 
   .fac-right-column {
@@ -1195,7 +1207,7 @@ nav a:hover {
 }
 
 .mission {
-  font-size: 23px;
+  font-size: 20px;
   background: white;
   padding-bottom: 3%;
   display: grid;
@@ -1327,6 +1339,7 @@ nav a:hover {
     flex-direction: row;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 5px;
+    padding-top: 50px;
     }
 
   .carousel {
