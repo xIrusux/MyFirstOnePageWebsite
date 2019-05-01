@@ -30,7 +30,7 @@ function flipCard() {
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
-
+    firstCard = this;
     return;
   }
   // second click

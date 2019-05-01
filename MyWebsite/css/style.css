@@ -1045,7 +1045,7 @@ nav a:hover {
   }
 
   .tree {
-    width: 100%;
+    width: 90%;
     text-align: center;
   }
 
@@ -1088,7 +1088,7 @@ nav a:hover {
   }
 
   .logo {
-    margin: 0% 45vw 0% 45vw;
+    margin: auto;
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -1382,8 +1382,7 @@ nav a:hover {
 
   .climbing-content {
     grid-row: 2/3;
-    padding: 15% 4% 4% 4%;
-    /* font-size: 21px; */
+    padding: 11% 4% 4% 4%;
     text-align: center;
   }
 
